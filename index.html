@@ -12,36 +12,50 @@
       font-family: 'Inter', sans-serif;
       position: relative;
       overflow-x: hidden;
-      background: linear-gradient(to bottom, #e6f5e6, #ffffff);
+      background-color: #f5f8f5;
     }
-    .animated-bg {
-      background: url('bOvf94dPRxWu0u3QsPjF_tree.avif) no-repeat center center;
+    
+    /* Pine Tree Animation */
+    .pine-tree {
+      background-image: url('https://cdn.pixabay.com/photo/2020/03/19/13/14/tree-4951514_1280.png');
       background-size: cover;
-      opacity: 0.08;
+      background-position: center;
+      width: 200px;
+      height: 200px;
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      animation: floatTree 20s ease-in-out infinite;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: moveTree 5s ease-in-out infinite;
+      z-index: -1;
     }
-    @keyframes floatTree {
+
+    @keyframes moveTree {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-30px); }
+      50% { transform: translateY(-20px); }
     }
+
     .content {
       position: relative;
       z-index: 10;
     }
+    
+    /* Services Cards Styling */
     .card {
-      @apply bg-green-50 p-6 rounded-xl shadow transition-transform duration-300 hover:scale-105;
+      @apply bg-green-50 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105;
     }
+
+    .card .icon {
+      font-size: 3rem;
+      color: #4caf50;
+    }
+
     .fade-in {
       opacity: 0;
       animation: fadeIn ease 2s;
       animation-fill-mode: forwards;
     }
+    
     @keyframes fadeIn {
       0% {opacity: 0;}
       100% {opacity: 1;}
@@ -49,7 +63,8 @@
   </style>
 </head>
 <body class="bg-green-50 text-gray-800">
-  <div class="animated-bg"></div>
+  <div class="pine-tree"></div>
+
   <div class="content">
     <!-- Hero Section -->
     <header class="text-center py-16 fade-in">
@@ -71,25 +86,30 @@
     <!-- Services Section -->
     <section class="bg-white py-16 px-6 max-w-5xl mx-auto fade-in">
       <h2 class="text-2xl font-semibold mb-6 text-center">Our Services Include:</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="card">
-          <h3 class="font-semibold text-lg">Tree Survey & Enumeration</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card text-center">
+          <div class="icon">🌳</div>
+          <h3 class="font-semibold text-lg mt-4">Tree Survey & Enumeration</h3>
           <p>Accurate tagging, measurement, and species identification of all on-site trees.</p>
         </div>
-        <div class="card">
-          <h3 class="font-semibold text-lg">Preparation of Tree Reports</h3>
+        <div class="card text-center">
+          <div class="icon">📄</div>
+          <h3 class="font-semibold text-lg mt-4">Preparation of Tree Reports</h3>
           <p>Submission-ready documents including condition assessments, photographs, and transplant feasibility.</p>
         </div>
-        <div class="card">
-          <h3 class="font-semibold text-lg">Liaising with Authorities</h3>
+        <div class="card text-center">
+          <div class="icon">🔗</div>
+          <h3 class="font-semibold text-lg mt-4">Liaising with Authorities</h3>
           <p>Coordination with Tree Officers, Ward Offices, and Garden Departments for timely approvals.</p>
         </div>
-        <div class="card">
-          <h3 class="font-semibold text-lg">Compensatory Plantation Plans</h3>
+        <div class="card text-center">
+          <div class="icon">🌱</div>
+          <h3 class="font-semibold text-lg mt-4">Compensatory Plantation Plans</h3>
           <p>Strategic planning for native and site-suitable species either on-site or through authorized NGOs.</p>
         </div>
-        <div class="card">
-          <h3 class="font-semibold text-lg">Submission Assistance</h3>
+        <div class="card text-center">
+          <div class="icon">📑</div>
+          <h3 class="font-semibold text-lg mt-4">Submission Assistance</h3>
           <p>Support in filing applications, tracking file movement, and addressing objections or remarks.</p>
         </div>
       </div>
