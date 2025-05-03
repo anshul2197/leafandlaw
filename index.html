@@ -7,15 +7,17 @@
   <title>Paldiwal Consultants | Tree NOC Experts</title>
   <link href="style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
       position: relative;
       overflow-x: hidden;
+      background: linear-gradient(to bottom, #e6f5e6, #ffffff);
     }
     .animated-bg {
-      background: url('https://cdn.pixabay.com/photo/2014/04/03/10/32/tree-311087_960_720.png') no-repeat center center;
-      background-size: cover;
+      background: url('https://cdn.pixabay.com/photo/2017/07/05/19/16/tree-2471226_1280.png') no-repeat center center;
+      background-size: contain;
       opacity: 0.05;
       position: absolute;
       top: 0;
@@ -27,83 +29,109 @@
     }
     @keyframes floatTree {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-30px); }
     }
     .content {
       position: relative;
       z-index: 10;
     }
     .card {
-      @apply bg-green-50 p-6 rounded-xl shadow;
+      @apply bg-green-50 p-6 rounded-xl shadow transition-transform duration-300 hover:scale-105;
+    }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn ease 2s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
     }
   </style>
 </head>
 <body class="bg-green-50 text-gray-800">
   <div class="animated-bg"></div>
   <div class="content">
+    <!-- Banner -->
+    <div class="w-full h-64 bg-cover bg-center" style="background-image: url('https://cdn.pixabay.com/photo/2021/06/07/08/56/forest-6314980_1280.jpg');">
+      <div class="w-full h-full bg-green-900 bg-opacity-40 flex items-center justify-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-white">Your Trusted Tree NOC Partner</h1>
+      </div>
+    </div>
+
     <!-- Hero Section -->
-    <header class="text-center py-16">
+    <header class="text-center py-16 fade-in">
       <h1 class="text-4xl font-bold text-green-900">Paldiwal Consultants</h1>
       <p class="mt-4 text-lg text-green-800">Simplifying Tree NOC Processes for Sustainable Development</p>
       <a href="#contact" class="mt-6 inline-block px-6 py-3 bg-green-700 text-white rounded-lg shadow hover:bg-green-800">Get Your Tree NOC</a>
     </header>
 
     <!-- About Section -->
-    <section class="py-16 px-6 max-w-4xl mx-auto">
+    <section class="py-16 px-6 max-w-4xl mx-auto fade-in">
       <h2 class="text-2xl font-semibold mb-4">About Us</h2>
       <p>We specialize in assisting individuals and businesses with obtaining Tree No Objection Certificates (Tree NOCs) required for legal tree removal or relocation in metropolitan areas. Our goal is to support urban development while ensuring compliance with green cover preservation laws.</p>
       <div class="mt-8">
         <h3 class="text-xl font-semibold mb-2">What is a Tree NOC?</h3>
-        <p>Placeholder text: A Tree NOC (No Objection Certificate) is an official approval required before cutting, relocating, or trimming trees in urban areas. It is issued by municipal or environmental authorities to ensure ecological balance is maintained.</p>
+        <p>A Tree NOC (No Objection Certificate) is an official approval required before cutting, relocating, or trimming trees in urban areas. It is issued by municipal or environmental authorities to ensure ecological balance is maintained.</p>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section class="bg-white py-16 px-6 max-w-5xl mx-auto">
+    <section class="bg-white py-16 px-6 max-w-5xl mx-auto fade-in">
       <h2 class="text-2xl font-semibold mb-6 text-center">Our Services</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="card">
-          <h3 class="font-semibold text-lg">Tree Assessment & Documentation</h3>
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-file-text"></i> Tree Assessment & Documentation</h3>
           <p>Professional evaluation and records of tree species, health, and viability.</p>
         </div>
         <div class="card">
-          <h3 class="font-semibold text-lg">NOC Application Assistance</h3>
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-file-arrow-up"></i> NOC Application Assistance</h3>
           <p>We help draft, compile, and submit all necessary documents to authorities.</p>
         </div>
         <div class="card">
-          <h3 class="font-semibold text-lg">Compliance Consulting</h3>
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-shield-check"></i> Compliance Consulting</h3>
           <p>Ensure your project meets local environmental guidelines and tree regulations.</p>
         </div>
         <div class="card">
-          <h3 class="font-semibold text-lg">Liaison with Authorities</h3>
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-buildings"></i> Liaison with Authorities</h3>
           <p>Coordination and follow-up with government departments and municipal bodies.</p>
         </div>
         <div class="card">
-          <h3 class="font-semibold text-lg">Site Survey & Mapping</h3>
-          <p>Placeholder text: Detailed site inspections and tree mapping to support accurate reporting and compliance.</p>
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-map-trifold"></i> Site Survey & Mapping</h3>
+          <p>Detailed site inspections and tree mapping to support accurate reporting and compliance.</p>
         </div>
         <div class="card">
-          <h3 class="font-semibold text-lg">Post-Approval Guidance</h3>
-          <p>Placeholder text: Support for next steps after NOC approval including project initiation and monitoring.</p>
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-check-circle"></i> Post-Approval Guidance</h3>
+          <p>Support for next steps after NOC approval including project initiation and monitoring.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-tree"></i> Tree Preservation Planning</h3>
+          <p>Strategies and support to preserve trees during urban development projects.</p>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold text-lg flex items-center gap-2"><i class="ph ph-leaf"></i> Eco Impact Reports</h3>
+          <p>Placeholder text: Analysis of environmental impacts and mitigation strategies for your project.</p>
         </div>
       </div>
       <div class="mt-12 text-center max-w-3xl mx-auto">
         <h3 class="text-xl font-semibold mb-2">Why Choose Paldiwal Consultants?</h3>
-        <p class="text-gray-700">Placeholder text: With years of experience, local expertise, and a commitment to green development, we are your trusted partner for tree-related compliance and documentation services.</p>
+        <p class="text-gray-700">With years of experience, local expertise, and a commitment to green development, we are your trusted partner for tree-related compliance and documentation services.</p>
       </div>
     </section>
 
-    <!-- Google Form CTA Section -->
-    <section class="bg-green-50 py-12 px-6">
-      <div class="text-center max-w-xl mx-auto">
+    <!-- Google Form Embedded Section -->
+    <section class="bg-green-50 py-12 px-6 fade-in">
+      <div class="text-center max-w-2xl mx-auto">
         <h2 class="text-xl font-semibold mb-4">Want to Work With Us?</h2>
-        <p class="mb-6">Fill out a quick form to get started. We'll get back to you shortly.</p>
-        <a href="https://forms.gle/your-google-form-id" target="_blank" class="inline-block px-6 py-3 bg-green-700 text-white rounded-lg shadow hover:bg-green-800 transition-all">Fill Out Our Interest Form</a>
+        <p class="mb-6">Fill out the form below and we’ll reach out shortly.</p>
+        <div class="rounded-lg overflow-hidden shadow-lg border border-green-200">
+          <iframe src="https://docs.google.com/forms/d/your-form-id/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-green-100 py-16 px-6">
+    <section id="contact" class="bg-green-100 py-16 px-6 fade-in">
       <div class="max-w-xl mx-auto text-center">
         <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
         <p class="mb-6">Reach out to us for expert advice and seamless Tree NOC solutions.</p>
@@ -117,7 +145,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 py-4">
+    <footer class="text-center text-sm text-gray-500 py-4 fade-in">
       &copy; 2025 Paldiwal Consultants. All rights reserved.<br />
       <span class="text-green-700">Live at:</span>
       <a href="https://anshul2197.github.io/tree-noc-landing-page/" class="text-green-800 underline hover:text-green-900" target="_blank">anshul2197.github.io/tree-noc-landing-page</a>
