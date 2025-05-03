@@ -14,20 +14,46 @@
       overflow-x: hidden;
       background-color: #f5f8f5;
     }
-    
+
     /* Pine Tree Animation */
     .pine-tree {
-      background-image: url('https://cdn.pixabay.com/photo/2020/03/19/13/14/tree-4951514_1280.png');
-      background-size: cover;
-      background-position: center;
-      width: 200px;
-      height: 200px;
       position: absolute;
       top: 20%;
       left: 50%;
       transform: translateX(-50%);
+      width: 100px;
+      height: 120px;
+      background: #2e8b57;
+      border-radius: 10px 10px 0 0;
       animation: moveTree 5s ease-in-out infinite;
       z-index: -1;
+    }
+
+    /* Tree Layers */
+    .pine-tree::before,
+    .pine-tree::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 80px;
+      background: #228b22;
+      border-radius: 50%;
+      animation: moveTree 5s ease-in-out infinite;
+    }
+
+    .pine-tree::before {
+      top: -60px;
+      width: 140px;
+      height: 100px;
+    }
+
+    .pine-tree::after {
+      top: -110px;
+      width: 160px;
+      height: 120px;
     }
 
     @keyframes moveTree {
@@ -39,7 +65,7 @@
       position: relative;
       z-index: 10;
     }
-    
+
     /* Services Cards Styling */
     .card {
       @apply bg-green-50 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105;
@@ -55,7 +81,7 @@
       animation: fadeIn ease 2s;
       animation-fill-mode: forwards;
     }
-    
+
     @keyframes fadeIn {
       0% {opacity: 0;}
       100% {opacity: 1;}
