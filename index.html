@@ -3,62 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Paldiwal Consultants help you obtain Tree NOC permits for legal tree removal and relocation in metropolitan areas." />
+  <meta name="description" content="Leaf & Law - Tree NOC Experts" />
   <title>Leaf & Law 🌳 | Tree NOC Experts 🌱</title>
   <link href="style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      position: relative;
       overflow-x: hidden;
-      background-color: #f5f8f5;
-    }
-
-    /* Pine Tree Animation */
-    .pine-tree {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 120px;
-      background: #2e8b57;
-      border-radius: 10px 10px 0 0;
-      animation: moveTree 5s ease-in-out infinite;
-      z-index: -1;
-    }
-
-    /* Tree Layers */
-    .pine-tree::before,
-    .pine-tree::after {
-      content: '';
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 80px;
-      background: #228b22;
-      border-radius: 50%;
-      animation: moveTree 5s ease-in-out infinite;
-    }
-
-    .pine-tree::before {
-      top: -60px;
-      width: 140px;
-      height: 100px;
-    }
-
-    .pine-tree::after {
-      top: -110px;
-      width: 160px;
-      height: 120px;
-    }
-
-    @keyframes moveTree {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      background: linear-gradient(to bottom, #e8f5e9, #ffffff);
     }
 
     .content {
@@ -66,9 +20,9 @@
       z-index: 10;
     }
 
-    /* Services Cards Styling */
     .card {
-      @apply bg-green-50 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105;
+      @apply bg-white p-6 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+      border: 1px solid #e0f2f1;
     }
 
     .card .icon {
@@ -83,79 +37,140 @@
     }
 
     @keyframes fadeIn {
-      0% {opacity: 0;}
-      100% {opacity: 1;}
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    header {
+      background: linear-gradient(120deg, #a8e6cf, #dcedc8);
+      clip-path: ellipse(100% 70% at 50% 30%);
+    }
+
+    header h1, header p {
+      color: #1b5e20;
+    }
+
+    footer {
+      background: #e0f2f1;
+      border-top: 2px solid #a5d6a7;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 0.75rem;
+    }
+
+    .hamburger {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      cursor: pointer;
+      z-index: 20;
+    }
+
+    .menu {
+      display: none;
+      position: absolute;
+      top: 3rem;
+      left: 1rem;
+      background: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 1rem;
+    }
+
+    .menu a {
+      display: block;
+      padding: 0.5rem 0;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
     }
   </style>
 </head>
-<body class="bg-green-50 text-gray-800">
-  <div class="pine-tree"></div>
+<body>
+  <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('hidden')">
+    <i data-feather="menu"></i>
+  </div>
+  <div class="menu hidden">
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <div class="content">
     <!-- Hero Section -->
-    <header class="text-center py-16 fade-in">
-      <h1 class="text-4xl font-bold text-green-900">Leaf & Law 🌳</h1>
-      <p class="mt-4 text-lg text-green-800">Simplifying Tree NOC Processes for Sustainable Development 🌱</p>
-      <a href="#contact" class="mt-6 inline-block px-6 py-3 bg-green-700 text-white rounded-lg shadow hover:bg-green-800">Get Your Tree NOC</a>
+    <header class="text-center py-20 fade-in">
+      <div class="flex justify-center mb-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/427/427735.png" alt="Logo" class="logo">
+      </div>
+      <h1 class="text-5xl font-bold text-green-900">Leaf & Law 🌳</h1>
+      <p class="mt-4 text-xl">Simplifying Tree NOC Processes for Sustainable Development 🌱</p>
+      <a href="#contact" class="mt-6 inline-block px-8 py-3 bg-green-700 text-white rounded-full shadow-md hover:bg-green-800">Get Your Tree NOC</a>
     </header>
 
     <!-- About Section -->
-    <section class="py-16 px-6 max-w-4xl mx-auto fade-in">
-      <h2 class="text-2xl font-semibold mb-4">About Us</h2>
-      <p>Our consultancy specializes in obtaining Tree NOCs (No Objection Certificates) from municipal and planning authorities, an essential legal requirement for construction, redevelopment, or infrastructure projects involving tree felling, transplantation, or new plantations.</p>
-      <div class="mt-8">
-        <h3 class="text-xl font-semibold mb-2">What is Tree NOC?</h3>
-        <p>Tree NOC is an official approval issued by the local governing body (such as BMC in Mumbai) granting permission to cut, transplant, or retain trees on a project site. It ensures compliance with urban greenery regulations under local Tree Preservation Acts.</p>
+    <section id="about" class="py-16 px-6 max-w-4xl mx-auto fade-in">
+      <h2 class="text-3xl font-semibold mb-4 text-center">About Us</h2>
+      <p class="text-lg text-center">Our consultancy specializes in obtaining Tree NOCs (No Objection Certificates) from municipal and planning authorities, an essential legal requirement for construction, redevelopment, or infrastructure projects involving tree felling, transplantation, or new plantations.</p>
+      <div class="mt-10 text-center">
+        <h3 class="text-2xl font-semibold mb-2">What is Tree NOC?</h3>
+        <p class="text-lg">Tree NOC is an official approval issued by the local governing body (such as BMC in Mumbai) granting permission to cut, transplant, or retain trees on a project site. It ensures compliance with urban greenery regulations under local Tree Preservation Acts.</p>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section class="bg-white py-16 px-6 max-w-5xl mx-auto fade-in">
-      <h2 class="text-2xl font-semibold mb-6 text-center">Our Services Include:</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+    <section id="services" class="bg-green-50 py-16 px-6 max-w-5xl mx-auto fade-in">
+      <h2 class="text-3xl font-semibold mb-10 text-center">Our Services Include:</h2>
+      <div class="grid md:grid-cols-3 gap-10">
         <div class="card text-center">
           <div class="icon">🌳</div>
-          <h3 class="font-semibold text-lg mt-4">Tree Survey & Enumeration</h3>
-          <p>Accurate tagging, measurement, and species identification of all on-site trees.</p>
+          <h3 class="font-semibold text-xl mt-4">Tree Survey & Enumeration</h3>
+          <p class="mt-2 text-gray-600">Accurate tagging, measurement, and species identification of all on-site trees.</p>
         </div>
         <div class="card text-center">
           <div class="icon">📄</div>
-          <h3 class="font-semibold text-lg mt-4">Preparation of Tree Reports</h3>
-          <p>Submission-ready documents including condition assessments, photographs, and transplant feasibility.</p>
+          <h3 class="font-semibold text-xl mt-4">Preparation of Tree Reports</h3>
+          <p class="mt-2 text-gray-600">Submission-ready documents including condition assessments, photographs, and transplant feasibility.</p>
         </div>
         <div class="card text-center">
           <div class="icon">🔗</div>
-          <h3 class="font-semibold text-lg mt-4">Liaising with Authorities</h3>
-          <p>Coordination with Tree Officers, Ward Offices, and Garden Departments for timely approvals.</p>
+          <h3 class="font-semibold text-xl mt-4">Liaising with Authorities</h3>
+          <p class="mt-2 text-gray-600">Coordination with Tree Officers, Ward Offices, and Garden Departments for timely approvals.</p>
         </div>
         <div class="card text-center">
           <div class="icon">🌱</div>
-          <h3 class="font-semibold text-lg mt-4">Compensatory Plantation Plans</h3>
-          <p>Strategic planning for native and site-suitable species either on-site or through authorized NGOs.</p>
+          <h3 class="font-semibold text-xl mt-4">Compensatory Plantation Plans</h3>
+          <p class="mt-2 text-gray-600">Strategic planning for native and site-suitable species either on-site or through authorized NGOs.</p>
         </div>
         <div class="card text-center">
           <div class="icon">📑</div>
-          <h3 class="font-semibold text-lg mt-4">Submission Assistance</h3>
-          <p>Support in filing applications, tracking file movement, and addressing objections or remarks.</p>
+          <h3 class="font-semibold text-xl mt-4">Submission Assistance</h3>
+          <p class="mt-2 text-gray-600">Support in filing applications, tracking file movement, and addressing objections or remarks.</p>
         </div>
       </div>
     </section>
 
     <!-- Google Form Embedded Section -->
-    <section class="bg-green-50 py-12 px-6 fade-in">
+    <section class="bg-green-100 py-12 px-6 fade-in">
       <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-xl font-semibold mb-4">Want to Work With Us?</h2>
+        <h2 class="text-2xl font-semibold mb-4">Want to Work With Us?</h2>
         <p class="mb-6">Fill out the form below and we’ll reach out shortly.</p>
         <div class="rounded-lg overflow-hidden shadow-lg border border-green-200">
-          <iframe src="https://docs.google.com/forms/d/your-form-id/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          <iframe src="https://docs.google.com/forms/d/your-form-id/viewform?embedded=true" width="100%" height="800">Loading…</iframe>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-green-100 py-16 px-6 fade-in">
+    <section id="contact" class="bg-green-50 py-16 px-6 fade-in">
       <div class="max-w-xl mx-auto text-center">
-        <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+        <h2 class="text-3xl font-semibold mb-4">Contact Us</h2>
         <p class="mb-6">Reach out to us for expert advice and seamless Tree NOC solutions.</p>
         <div class="text-left bg-white p-6 rounded-xl shadow">
           <p><strong>Email:</strong> yourname@example.com</p>
@@ -167,12 +182,16 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center text-sm text-gray-500 py-4 fade-in">
-      &copy; 2025 Leaf & Law. All rights reserved.<br />
-      <p>We ensure smooth and lawful project execution while contributing to ecological sustainability. Whether it’s for a private development, government infrastructure, or institutional campus, we manage the entire Tree NOC process end-to-end.</p>
-      <span class="text-green-700">Live at:</span>
-      <a href="https://anshul2197.github.io/tree-noc-landing-page/" class="text-green-800 underline hover:text-green-900" target="_blank">anshul2197.github.io/tree-noc-landing-page</a>
+    <footer class="text-center text-sm text-gray-700 py-6 fade-in">
+      <p class="max-w-3xl mx-auto">We ensure smooth and lawful project execution while contributing to ecological sustainability. Whether it’s for a private development, government infrastructure, or institutional campus, we manage the entire Tree NOC process end-to-end.</p>
+      <p class="mt-4">&copy; 2025 Leaf & Law. All rights reserved.<br />
+        <span class="text-green-700">Live at:</span>
+        <a href="https://anshul2197.github.io/tree-noc-landing-page/" class="text-green-800 underline hover:text-green-900" target="_blank">anshul2197.github.io/tree-noc-landing-page</a>
+      </p>
     </footer>
   </div>
+  <script>
+    feather.replace();
+  </script>
 </body>
 </html>
